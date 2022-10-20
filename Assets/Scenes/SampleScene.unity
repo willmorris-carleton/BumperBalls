@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &379937716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 379937718}
+  - component: {fileID: 379937717}
+  m_Layer: 0
+  m_Name: ParticleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &379937717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379937716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4110ba4db5aa7247a95e470a874d226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExplosionPrefab: {fileID: 3677360528147150233, guid: 2e4edef53c02a5c4f8db77090abee874, type: 3}
+  ObjectPoolSize: 10
+--- !u!4 &379937718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379937716}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6006414, y: 0.9648166, z: 2.0144806}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &690350192
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.22120804, y: 0, z: 0, w: 0.97522664}
-  m_LocalPosition: {x: 0, y: 5, z: -10}
+  m_LocalPosition: {x: 0, y: 5.16, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -424,11 +469,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6884903175294231930, guid: 3aef42d9a57ada046b7812f549fdee83, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6884903175294231930, guid: 3aef42d9a57ada046b7812f549fdee83, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.1559207
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6884903175294231930, guid: 3aef42d9a57ada046b7812f549fdee83, type: 3}
       propertyPath: m_LocalRotation.w
@@ -498,7 +543,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382231071}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5f346f10931882b4594c0fd4747a6c04, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -589,7 +634,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -613,7 +658,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -702,15 +747,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6884903175294231930, guid: 3aef42d9a57ada046b7812f549fdee83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.37
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6884903175294231930, guid: 3aef42d9a57ada046b7812f549fdee83, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6884903175294231930, guid: 3aef42d9a57ada046b7812f549fdee83, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6884903175294231930, guid: 3aef42d9a57ada046b7812f549fdee83, type: 3}
       propertyPath: m_LocalRotation.w
@@ -744,10 +789,6 @@ PrefabInstance:
       propertyPath: m_camera
       value: 
       objectReference: {fileID: 963194227}
-    - target: {fileID: 6884903175294231931, guid: 3aef42d9a57ada046b7812f549fdee83, type: 3}
-      propertyPath: playerID
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7432533485154592543, guid: 3aef42d9a57ada046b7812f549fdee83, type: 3}
       propertyPath: m_RootOrder
       value: 2

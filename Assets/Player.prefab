@@ -97,6 +97,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1892767847991228103, guid: ced2d8a7ec959b942bde485e95d56848, type: 3}
+      propertyPath: maxKnockbackImpulseForce
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892767847991228103, guid: ced2d8a7ec959b942bde485e95d56848, type: 3}
+      propertyPath: minKnockbackImpulseForce
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1892767847991228109, guid: ced2d8a7ec959b942bde485e95d56848, type: 3}
       propertyPath: m_Name
       value: Ball
