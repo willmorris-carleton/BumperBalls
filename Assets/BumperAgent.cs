@@ -7,8 +7,18 @@ using Unity.MLAgents.Sensors;
 
 public class BumperAgent : Agent
 {
+
     [SerializeReference]
-    private BallController m_ball = null;
+    private Game m_game;
+
+    [SerializeReference]
+    private BallController m_ball;
+
+    public override void OnEpisodeBegin()
+    {
+        base.OnEpisodeBegin();
+        m_ball.transform.localPosition = m_game.GetStartingPosition();
+    }
 
     public override void CollectObservations(VectorSensor sensor)
     {
@@ -23,13 +33,18 @@ public class BumperAgent : Agent
         float sideMovement = actions.ContinuousActions[0];
         float forwardMovement = actions.ContinuousActions[1];
 
-        m_ball.SetMovementDirection(new Vector3(sideMovement, 0, forwardMovement));
+        if (!m_ball.isDead()) {
+            m_ball.SetMovementDirection(new Vector3(sideMovement, 0, forwardMovement));
+
+            AddReward(-0.001f);
+        }
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
         continuousActions[0] = Input.GetAxis("Horizontal1");
-        continuousActions[1] = Input.GetAxis("Horizontal1");
+        continuousActions[1] = Input.GetAxis("Vertical1");
     }
+
 }

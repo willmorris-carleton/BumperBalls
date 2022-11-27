@@ -17,6 +17,8 @@ public class BallController : MonoBehaviour
 
     Renderer m_renderer;
 
+    bool m_currentlyAlive = false;
+
     void OnValidate() {
         rb = GetComponent<Rigidbody>();
         m_renderer = GetComponent<Renderer>();
@@ -40,10 +42,18 @@ public class BallController : MonoBehaviour
         rb.AddForce(m_movementDirection*movementForce*Time.deltaTime, ForceMode.Acceleration);
 
         //TEMP
-        if (rb.transform.position.y < -5) {
-            rb.transform.position = Vector3.up;
-            rb.velocity = Vector3.zero;
+        if (m_currentlyAlive && transform.position.y < -5) {
+            die();
         }
+    }
+    
+    public bool isDead() {
+        return m_currentlyAlive;
+    }
+
+    void die() {
+        gameObject.SetActive(false);
+        m_currentlyAlive = false;
     }
 
     void OnCollisionEnter(Collision other) {
