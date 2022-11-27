@@ -7,9 +7,7 @@ public class BallController : MonoBehaviour
 {
 
     public float movementForce = 10.0f;
-    //[Range(0.01f, 0.99f)]
     public float minKnockbackImpulseForce = 0.1f;
-    //[Range(1f, 3f)]
     public float maxKnockbackImpulseForce = 1f;
 
     [HideInInspector]
@@ -25,7 +23,7 @@ public class BallController : MonoBehaviour
     }
 
     public void SetMovementDirection(Vector3 direction) {
-        m_movementDirection = direction;
+        m_movementDirection = Vector3.ProjectOnPlane(direction, Vector3.up);
         m_movementDirection.Normalize();
     }
 
@@ -46,8 +44,6 @@ public class BallController : MonoBehaviour
             rb.transform.position = Vector3.up;
             rb.velocity = Vector3.zero;
         }
-
-        //rb.velocity *= (1f - Time.deltaTime);
     }
 
     void OnCollisionEnter(Collision other) {
@@ -57,9 +53,6 @@ public class BallController : MonoBehaviour
 
             ParticleEffectsManager.CreateExplosion(other.GetContact(0).point);
 
-            //if (other.relativeVelocity.magnitude < 0 || Vector3.Dot(other.relativeVelocity, rb.velocity) > 0) {
-
-            //}
             Vector3 relativeVelocity = other.relativeVelocity;
             if (other.relativeVelocity.sqrMagnitude < 0.1f) {
                 relativeVelocity = -rb.velocity;
