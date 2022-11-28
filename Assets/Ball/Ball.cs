@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody), typeof(Renderer))]
 public class Ball : MonoBehaviour
 {
+    [SerializeField]
+    public BallID ID;
 
     public float movementForce = 10.0f;
     public float minKnockbackImpulseForce = 0.1f;
@@ -22,6 +24,7 @@ public class Ball : MonoBehaviour
     void OnValidate() {
         rb = GetComponent<Rigidbody>();
         m_renderer = GetComponent<Renderer>();
+        if (BallColorSettingsManager.Instance) SetBallColor(BallColorSettingsManager.GetColor(ID));
     }
 
     public void SetMovementDirection(Vector3 direction) {

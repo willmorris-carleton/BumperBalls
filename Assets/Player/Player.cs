@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    PlayerID playerID;
-
     [SerializeReference]
     private Ball m_ball = null;
 
@@ -16,19 +13,10 @@ public class Player : MonoBehaviour
 
     void Start() {
         axisNames = new string[] {
-            "Horizontal" + (int)playerID,
-            "Vertical" + (int)playerID,
+            "Horizontal" + (int)m_ball.ID,
+            "Vertical" + (int)m_ball.ID,
         };
         m_camera = Camera.main;
-        m_ball.SetBallColor(PlayerSettingsManager.GetPlayerColor(playerID));
-    }
-
-    void OnValidate() {
-        if (transform.GetChild(0).TryGetComponent(out m_ball)) {
-            if (PlayerSettingsManager.Instance != null) {
-                m_ball.SetBallColor(PlayerSettingsManager.GetPlayerColor(playerID));
-            }
-        }
     }
 
     void Update() {

@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 690350194}
   - component: {fileID: 690350193}
   m_Layer: 0
-  m_Name: PlayerSettingsManager
+  m_Name: BallColorSettingsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,11 +224,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d64774ddae5d45418fffa3b5c74fa71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerColors:
+  BallColors:
   - {r: 1, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0.04225111, b: 1, a: 0}
-  - {r: 0, g: 1, b: 0.08161616, a: 0}
-  - {r: 1, g: 0.9504018, b: 0, a: 0}
+  - {r: 0, g: 0.7088356, b: 1, a: 0}
+  - {r: 0.074971676, g: 1, b: 0, a: 0}
+  - {r: 0.993973, g: 1, b: 0, a: 0}
 --- !u!4 &690350194
 Transform:
   m_ObjectHideFlags: 0
@@ -439,6 +439,10 @@ PrefabInstance:
     - target: {fileID: 78347827129756471, guid: 3aef42d9a57ada046b7812f549fdee83, type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132912904589723370, guid: 3aef42d9a57ada046b7812f549fdee83, type: 3}
+      propertyPath: ID
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5132912904589723375, guid: 3aef42d9a57ada046b7812f549fdee83, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -717,7 +721,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0, g: 0.04225111, b: 1, a: 0}
-    - _Color: {r: 0, g: 0.04225111, b: 1, a: 0}
+    - _Color: {r: 0, g: 0.7088356, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
