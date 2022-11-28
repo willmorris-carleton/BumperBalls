@@ -5,7 +5,7 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 
-public class BumperAgent : Agent
+public class BallAgent : Agent
 {
 
     [SerializeReference]
