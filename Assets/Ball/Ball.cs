@@ -27,6 +27,10 @@ public class Ball : MonoBehaviour
         if (BallColorSettingsManager.Instance) SetBallColor(BallColorSettingsManager.GetColor(ID));
     }
 
+    private void Start() {
+        if (BallColorSettingsManager.Instance) SetBallColor(BallColorSettingsManager.GetColor(ID));
+    }
+
     public void SetMovementDirection(Vector3 direction) {
         m_movementDirection = Vector3.ProjectOnPlane(direction, Vector3.up);
         m_movementDirection.Normalize();

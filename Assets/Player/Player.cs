@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Ball))]
 public class Player : MonoBehaviour
 {
     [SerializeReference]
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
             "Vertical" + (int)m_ball.ID,
         };
         m_camera = Camera.main;
+        m_ball = GetComponent<Ball>();
     }
 
     void Update() {
