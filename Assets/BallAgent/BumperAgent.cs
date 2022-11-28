@@ -16,7 +16,6 @@ public class BumperAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        base.OnEpisodeBegin();
         m_ball.transform.localPosition = m_game.GetStartingPosition();
     }
 
