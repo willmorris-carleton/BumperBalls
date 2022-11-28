@@ -46,6 +46,15 @@ public class Ball : MonoBehaviour
         }
     }
 
+    public void Respawn(Vector3 startingPos) {
+        gameObject.SetActive(true);
+        transform.position = startingPos;
+        transform.rotation = Quaternion.identity; 
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        m_currentlyAlive = true;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -59,7 +68,7 @@ public class Ball : MonoBehaviour
     }
     
     public bool isDead() {
-        return m_currentlyAlive;
+        return !m_currentlyAlive;
     }
 
     void die() {

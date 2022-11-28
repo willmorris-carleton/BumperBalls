@@ -875,6 +875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c60abaa58bc82074ba16caacbbfa2458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapObject: {fileID: 1382231071}
   gameLength: 60
   balls:
   - {fileID: 1892767847151877840}
