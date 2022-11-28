@@ -21,6 +21,7 @@ public class BallColorSettingsManager : MonoBehaviour
     }
 
     public static Color GetColor(BallID ballId) {
+        Debug.Log(ballId);
         return Instance.BallColors[(int) ballId];
     }
 }

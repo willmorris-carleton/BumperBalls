@@ -19,7 +19,7 @@ public class Game : MonoBehaviour
 
     private void Update() {
         for (int i = 0; i < balls.Count; i++) {
-            Debug.Log(i + ": " + (balls[i].isDead() ? "Dead" : "Alive"));
+            //Debug.Log(i + ": " + (balls[i].isDead() ? "Dead" : "Alive"));
         }
     }
 

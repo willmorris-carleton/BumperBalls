@@ -5,7 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody), typeof(Renderer))]
 public class Ball : MonoBehaviour
 {
-    [SerializeField]
+
+    static int ballIds = 0;
+
+    [HideInInspector]
     public BallID ID;
 
     public float movementForce = 10.0f;
@@ -24,11 +27,12 @@ public class Ball : MonoBehaviour
     void OnValidate() {
         rb = GetComponent<Rigidbody>();
         m_renderer = GetComponent<Renderer>();
-        if (BallColorSettingsManager.Instance) SetBallColor(BallColorSettingsManager.GetColor(ID));
     }
 
-    private void Start() {
-        if (BallColorSettingsManager.Instance) SetBallColor(BallColorSettingsManager.GetColor(ID));
+    private void Awake() {
+        ID = (BallID)ballIds;
+        ballIds++;
+        SetBallColor(BallColorSettingsManager.GetColor(ID));
     }
 
     public void SetMovementDirection(Vector3 direction) {
@@ -38,7 +42,7 @@ public class Ball : MonoBehaviour
 
     public void SetBallColor(Color c) {
         if (TryGetComponent(out m_renderer)) {
-            m_renderer.sharedMaterial.color = c;
+            m_renderer.material.SetColor("_Color", c);
         }
     }
 
