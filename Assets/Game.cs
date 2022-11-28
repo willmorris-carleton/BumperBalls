@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Game : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class Game : MonoBehaviour
     [SerializeReference]
     GameObject mapObject;
     Renderer mapRenderer = null;
-
+    
+    [SerializeField]
+    TextMeshProUGUI text;
     public float gameLength = 60.0f;
 
     public List<Ball> balls = new List<Ball>();
@@ -58,6 +61,8 @@ public class Game : MonoBehaviour
     }
 
     private void Update() {
+
+        text.SetText(Mathf.RoundToInt(gameLength - (Time.time - timeStarted)).ToString());
 
         if (Time.time - timeStarted > gameLength || NumberBallsAlive() <= 1) {
             EndGame();
