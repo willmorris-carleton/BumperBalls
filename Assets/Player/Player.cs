@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     PlayerID playerID;
 
     [SerializeReference]
-    private BallController m_ball = null;
+    private Ball m_ball = null;
 
     Camera m_camera;
 

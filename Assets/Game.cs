@@ -6,10 +6,16 @@ public class Game : MonoBehaviour
 {
     public float gameLength = 60.0f;
 
-    public List<BallController> balls = new List<BallController>();
+    public List<Ball> balls = new List<Ball>();
 
-    List<Vector3> possibleStartingPositions = new List<Vector3>();
+    public List<Vector3> possibleStartingPositions = new List<Vector3>();
     List<Vector3> availableStartingPositions;
+
+    float timeStarted = 0f;
+
+    private void Start() {
+        timeStarted = Time.time;
+    }
 
     private void Update() {
         for (int i = 0; i < balls.Count; i++) {

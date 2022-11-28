@@ -12,7 +12,7 @@ public class BallAgent : Agent
     private Game m_game;
 
     [SerializeReference]
-    private BallController m_ball;
+    private Ball m_ball;
 
     public override void OnEpisodeBegin()
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(Renderer))]
-public class BallController : MonoBehaviour
+public class Ball : MonoBehaviour
 {
 
     public float movementForce = 10.0f;
@@ -57,7 +57,7 @@ public class BallController : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision other) {
-        BallController otherBall = other.gameObject.GetComponent<BallController>();
+        Ball otherBall = other.gameObject.GetComponent<Ball>();
         if (otherBall != null) {
             Debug.Log("Collision");
 
