@@ -82,8 +82,20 @@ public class Game : MonoBehaviour
 
     private void Update() {
 
+        //Update the UI text game time counter
         text.SetText(Mathf.RoundToInt(gameLength - (Time.time - timeStarted)).ToString());
 
+        //Kill any balls that are off map
+        float mapRadius = GetMapRadius();
+        for (int i = 0; i < balls.Count; i++) {
+            if (!balls[i].isDead()) {
+                if (balls[i].transform.localPosition.sqrMagnitude > mapRadius*mapRadius) {
+                    balls[i].die();
+                }
+            }
+        }
+
+        //Restart game if time has reached max or there is 1 or less balls remaining
         if (Time.time - timeStarted > gameLength || NumberBallsAlive() <= 1) {
             EndGame();
             StartNewGame();
@@ -109,5 +121,9 @@ public class Game : MonoBehaviour
             //Debug.Log(i + ": " + (balls[i].isDead() ? "Dead" : "Alive"));
         }
         return n;
+    }
+
+    public float GetMapRadius() {
+        return mapObject.transform.localScale.x/2f;
     }
 }

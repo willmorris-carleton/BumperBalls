@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  movementForce: 250
+  movementForce: 750
   minKnockbackImpulseForce: 1
   maxKnockbackImpulseForce: 2
   rb: {fileID: 7344471163219061746}
@@ -182,6 +182,8 @@ MonoBehaviour:
   MaxStep: 0
   m_game: {fileID: 0}
   m_ball: {fileID: 7344471163219061753}
+  minHitSpeedForReward: 5
+  maxHitSpeedForReward: 10
 --- !u!114 &4449200364539525426
 MonoBehaviour:
   m_ObjectHideFlags: 0

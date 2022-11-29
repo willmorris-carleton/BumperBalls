@@ -14,6 +14,17 @@ public class BallAgent : Agent
     [SerializeReference]
     private Ball m_ball;
 
+    public float minHitSpeedForReward = 2.0f;
+    public float maxHitSpeedForReward = 8.0f;
+
+    float minHitSpeedSqr;
+    float maxHitSpeedSqr;
+
+    public override void Initialize() {
+        minHitSpeedSqr = minHitSpeedForReward*minHitSpeedForReward;
+        maxHitSpeedSqr = maxHitSpeedForReward*maxHitSpeedForReward;
+    }
+
     public override void CollectObservations(VectorSensor sensor)
     {
         //Position and velocity of itself
@@ -43,6 +54,24 @@ public class BallAgent : Agent
         ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
         continuousActions[0] = Input.GetAxis("Horizontal1");
         continuousActions[1] = Input.GetAxis("Vertical1");
+    }
+
+    void OnCollisionEnter(Collision other) {
+        Ball otherBall = other.gameObject.GetComponent<Ball>();
+        if (otherBall != null) {
+
+            //If the hit was big enough, then agent closer to center recieves reward
+            float relativeVelocitySqrMag = other.relativeVelocity.sqrMagnitude;
+
+            if (relativeVelocitySqrMag > minHitSpeedSqr) {
+                if (m_ball.transform.localPosition.sqrMagnitude < otherBall.transform.localPosition.sqrMagnitude) {
+                    float reward = Mathf.Lerp(0.2f, 1f, (relativeVelocitySqrMag - minHitSpeedSqr) / (maxHitSpeedSqr - minHitSpeedSqr));
+                    SetReward(reward);
+                    Debug.Log("Speed: " + relativeVelocitySqrMag.ToString() + " R: " + reward.ToString());
+                }
+            }
+        }
+        
     }
 
 }

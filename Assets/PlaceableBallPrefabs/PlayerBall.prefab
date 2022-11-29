@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  movementForce: 400
+  movementForce: 750
   minKnockbackImpulseForce: 1
   maxKnockbackImpulseForce: 2
   rb: {fileID: 6624911284791760898}

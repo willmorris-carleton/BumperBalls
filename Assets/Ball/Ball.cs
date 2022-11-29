@@ -54,18 +54,13 @@ public class Ball : MonoBehaviour
     {
         //Apply force in direction
         rb.AddForce(m_movementDirection*movementForce*Time.deltaTime, ForceMode.Acceleration);
-
-        //TEMP
-        if (m_currentlyAlive && transform.localPosition.y < -5) {
-            die();
-        }
     }
     
     public bool isDead() {
         return !m_currentlyAlive;
     }
 
-    void die() {
+    public void die() {
         gameObject.SetActive(false);
         m_currentlyAlive = false;
 
@@ -80,10 +75,6 @@ public class Ball : MonoBehaviour
         Ball otherBall = other.gameObject.GetComponent<Ball>();
         if (otherBall != null) {
             //Debug.Log("Collision");
-
-            if (TryGetComponent<BallAgent>(out BallAgent ballAgent)) {
-                ballAgent.SetReward(1f);
-            }
 
             ParticleEffectsManager.CreateExplosion(other.GetContact(0).point);
 
