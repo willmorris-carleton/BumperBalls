@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
             "Horizontal" + (int)m_ball.ID,
             "Vertical" + (int)m_ball.ID,
         };
-        Debug.Log((int)m_ball.ID);
         m_camera = Camera.main;
     }
 

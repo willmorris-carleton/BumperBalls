@@ -5,11 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody), typeof(Renderer))]
 public class Ball : MonoBehaviour
 {
-
-    static int ballIds = 0;
-
     [HideInInspector]
-    public BallID ID;
+    public BallID ID; //Set by game
 
     public float movementForce = 10.0f;
     public float minKnockbackImpulseForce = 0.1f;
@@ -27,12 +24,6 @@ public class Ball : MonoBehaviour
     void OnValidate() {
         rb = GetComponent<Rigidbody>();
         m_renderer = GetComponent<Renderer>();
-    }
-
-    private void Awake() {
-        ID = (BallID)ballIds;
-        ballIds++;
-        SetBallColor(BallColorSettingsManager.GetColor(ID));
     }
 
     public void SetMovementDirection(Vector3 direction) {
@@ -88,7 +79,11 @@ public class Ball : MonoBehaviour
     void OnCollisionEnter(Collision other) {
         Ball otherBall = other.gameObject.GetComponent<Ball>();
         if (otherBall != null) {
-            Debug.Log("Collision");
+            //Debug.Log("Collision");
+
+            if (TryGetComponent<BallAgent>(out BallAgent ballAgent)) {
+                ballAgent.SetReward(1f);
+            }
 
             ParticleEffectsManager.CreateExplosion(other.GetContact(0).point);
 

@@ -21,6 +21,13 @@ public class Game : MonoBehaviour
 
     float timeStarted = 0f;
 
+    private void Awake() {
+        for (int i = 0; i < balls.Count; i++) {
+            balls[i].ID = (BallID)i;
+            balls[i].SetBallColor(BallColorSettingsManager.GetColor(balls[i].ID));
+        }
+    }
+
     private void Start() {
         StartNewGame();
         mapRenderer = mapObject.GetComponent<Renderer>();
@@ -41,7 +48,7 @@ public class Game : MonoBehaviour
             int winnerIndex = GetWinnerIndex();
             SetMapColour(BallColorSettingsManager.GetColor(balls[winnerIndex].ID));
             if (balls[winnerIndex].TryGetComponent<BallAgent>(out BallAgent ballAgent)) {
-                ballAgent.SetReward(1);
+                //ballAgent.SetReward(1);
                 ballAgent.EndEpisode();
                 ballAgent.enabled = false;
             }
