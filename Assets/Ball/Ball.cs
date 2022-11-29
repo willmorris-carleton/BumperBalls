@@ -22,7 +22,7 @@ public class Ball : MonoBehaviour
 
     Renderer m_renderer;
 
-    bool m_currentlyAlive = false;
+    bool m_currentlyAlive = true;
 
     void OnValidate() {
         rb = GetComponent<Rigidbody>();
@@ -48,11 +48,14 @@ public class Ball : MonoBehaviour
 
     public void Respawn(Vector3 startingPos) {
         gameObject.SetActive(true);
-        transform.position = startingPos;
+        transform.localPosition = startingPos;
         transform.rotation = Quaternion.identity; 
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         m_currentlyAlive = true;
+        if (TryGetComponent<BallAgent>(out BallAgent ballAgent)) {
+            ballAgent.enabled = true;
+        }
     }
 
     // Update is called once per frame
@@ -62,7 +65,7 @@ public class Ball : MonoBehaviour
         rb.AddForce(m_movementDirection*movementForce*Time.deltaTime, ForceMode.Acceleration);
 
         //TEMP
-        if (m_currentlyAlive && transform.position.y < -5) {
+        if (m_currentlyAlive && transform.localPosition.y < -5) {
             die();
         }
     }
@@ -74,6 +77,12 @@ public class Ball : MonoBehaviour
     void die() {
         gameObject.SetActive(false);
         m_currentlyAlive = false;
+
+        if (TryGetComponent<BallAgent>(out BallAgent ballAgent)) {
+            ballAgent.SetReward(-1f);
+            ballAgent.EndEpisode();
+            ballAgent.enabled = false;
+        }
     }
 
     void OnCollisionEnter(Collision other) {

@@ -38,22 +38,35 @@ public class Game : MonoBehaviour
         
         //If there is a winner...
         if (NumberBallsAlive() == 1) {
-            SetMapColour(BallColorSettingsManager.GetColor(GetWinnerID()));
+            int winnerIndex = GetWinnerIndex();
+            SetMapColour(BallColorSettingsManager.GetColor(balls[winnerIndex].ID));
+            if (balls[winnerIndex].TryGetComponent<BallAgent>(out BallAgent ballAgent)) {
+                ballAgent.SetReward(1);
+                ballAgent.EndEpisode();
+                ballAgent.enabled = false;
+            }
         }
         //If there is a tie then no winner...
         else {
             SetMapColour(Color.white);
-        }
 
-        //Send winner events
-        //End Agent episodes
+            //End Agent episodes for those that are still enabled because of a tie
+            for (int i = 0; i < balls.Count; i++) {
+                if (balls[i].TryGetComponent<BallAgent>(out BallAgent ballAgent)) {
+                    if (ballAgent.enabled) {
+                        ballAgent.EndEpisode();
+                        ballAgent.enabled = false;
+                    }
+                }
+            }
+        }
     }
 
-    BallID GetWinnerID() {
+    int GetWinnerIndex() {
         for (int i = 0; i < balls.Count; i++) {
-            if (!balls[i].isDead()) return balls[i].ID;
+            if (!balls[i].isDead()) return i;
         }
-        return BallID.Ball1; //Should not happen
+        return -1; //Should not happen
     }
 
     void SetMapColour(Color color) {
