@@ -67,7 +67,7 @@ public class BallAgent : Agent
                 if (m_ball.transform.localPosition.sqrMagnitude < otherBall.transform.localPosition.sqrMagnitude) {
                     float reward = Mathf.Lerp(0.2f, 1f, (relativeVelocitySqrMag - minHitSpeedSqr) / (maxHitSpeedSqr - minHitSpeedSqr));
                     SetReward(reward);
-                    Debug.Log("Speed: " + relativeVelocitySqrMag.ToString() + " R: " + reward.ToString());
+                    //Debug.Log("Speed: " + relativeVelocitySqrMag.ToString() + " R: " + reward.ToString());
                 }
             }
         }

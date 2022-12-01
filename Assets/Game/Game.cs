@@ -21,6 +21,11 @@ public class Game : MonoBehaviour
 
     float timeStarted = 0f;
 
+    public int numGames = 0;
+
+    public delegate void OnGameOver();
+    public OnGameOver gameOverDelegate;
+
     private void Awake() {
         for (int i = 0; i < balls.Count; i++) {
             balls[i].ID = (BallID)i;
@@ -34,6 +39,7 @@ public class Game : MonoBehaviour
     }
 
     private void StartNewGame() {
+        numGames++;
         timeStarted = Time.time;
 
         foreach (Ball ball in balls) {
@@ -47,11 +53,7 @@ public class Game : MonoBehaviour
         if (NumberBallsAlive() == 1) {
             int winnerIndex = GetWinnerIndex();
             SetMapColour(BallColorSettingsManager.GetColor(balls[winnerIndex].ID));
-            if (balls[winnerIndex].TryGetComponent<BallAgent>(out BallAgent ballAgent)) {
-                //ballAgent.SetReward(1);
-                ballAgent.EndEpisode();
-                ballAgent.enabled = false;
-            }
+            balls[winnerIndex].wonGame();
         }
         //If there is a tie then no winner...
         else {
@@ -67,6 +69,8 @@ public class Game : MonoBehaviour
                 }
             }
         }
+
+        gameOverDelegate();
     }
 
     int GetWinnerIndex() {

@@ -21,6 +21,9 @@ public class Ball : MonoBehaviour
 
     bool m_currentlyAlive = true;
 
+    public int gamesWon = 0;
+    public int gamesDied = 0;
+
     void OnValidate() {
         rb = GetComponent<Rigidbody>();
         m_renderer = GetComponent<Renderer>();
@@ -63,6 +66,7 @@ public class Ball : MonoBehaviour
     public void die() {
         gameObject.SetActive(false);
         m_currentlyAlive = false;
+        gamesDied++;
 
         if (TryGetComponent<BallAgent>(out BallAgent ballAgent)) {
             ballAgent.SetReward(-1f);
@@ -85,6 +89,14 @@ public class Ball : MonoBehaviour
             float knockbackMagnitude = Mathf.Clamp(relativeVelocity.magnitude, minKnockbackImpulseForce, maxKnockbackImpulseForce);
             rb.AddForce(relativeVelocity.normalized*knockbackMagnitude, ForceMode.Impulse);
         }
-        
+    }
+
+    public void wonGame() {
+        if (TryGetComponent<BallAgent>(out BallAgent ballAgent)) {
+            //ballAgent.SetReward(1);
+            ballAgent.EndEpisode();
+            ballAgent.enabled = false;
+        }
+        gamesWon++;
     }
 }
