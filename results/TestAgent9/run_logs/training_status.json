@@ -1,0 +1,38 @@
+{
+    "BumperBall": {
+        "checkpoints": [
+            {
+                "steps": 499966,
+                "file_path": "results\\TestAgent9\\BumperBall\\BumperBall-499966.onnx",
+                "reward": 0.29599998593330384,
+                "creation_time": 1669949980.3318067,
+                "auxillary_file_paths": [
+                    "results\\TestAgent9\\BumperBall\\BumperBall-499966.pt"
+                ]
+            },
+            {
+                "steps": 500222,
+                "file_path": "results\\TestAgent9\\BumperBall\\BumperBall-500222.onnx",
+                "reward": 0.29599998593330384,
+                "creation_time": 1669949980.3678067,
+                "auxillary_file_paths": [
+                    "results\\TestAgent9\\BumperBall\\BumperBall-500222.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500222,
+            "file_path": "results\\TestAgent9\\BumperBall.onnx",
+            "reward": 0.29599998593330384,
+            "creation_time": 1669949980.3678067,
+            "auxillary_file_paths": [
+                "results\\TestAgent9\\BumperBall\\BumperBall-500222.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

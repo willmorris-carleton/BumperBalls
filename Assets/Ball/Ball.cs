@@ -24,6 +24,11 @@ public class Ball : MonoBehaviour
     public int gamesWon = 0;
     public int gamesDied = 0;
 
+    public delegate void OnDeath();
+    public OnDeath onDeathDelegate;
+    public delegate void OnWin();
+    public OnWin onWinDelegate;
+
     void OnValidate() {
         rb = GetComponent<Rigidbody>();
         m_renderer = GetComponent<Renderer>();
@@ -68,11 +73,7 @@ public class Ball : MonoBehaviour
         m_currentlyAlive = false;
         gamesDied++;
 
-        if (TryGetComponent<BallAgent>(out BallAgent ballAgent)) {
-            ballAgent.SetReward(-1f);
-            ballAgent.EndEpisode();
-            ballAgent.enabled = false;
-        }
+        onDeathDelegate?.Invoke();
     }
 
     void OnCollisionEnter(Collision other) {
@@ -92,11 +93,7 @@ public class Ball : MonoBehaviour
     }
 
     public void wonGame() {
-        if (TryGetComponent<BallAgent>(out BallAgent ballAgent)) {
-            //ballAgent.SetReward(1);
-            ballAgent.EndEpisode();
-            ballAgent.enabled = false;
-        }
+        onWinDelegate?.Invoke();
         gamesWon++;
     }
 }

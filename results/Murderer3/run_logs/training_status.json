@@ -1,0 +1,30 @@
+{
+    "BumperBall": {
+        "elo": 3318.2536198412267,
+        "checkpoints": [
+            {
+                "steps": 404721,
+                "file_path": "results\\Murderer3\\BumperBall\\BumperBall-404721.onnx",
+                "reward": 36.08730855340196,
+                "creation_time": 1670021845.019509,
+                "auxillary_file_paths": [
+                    "results\\Murderer3\\BumperBall\\BumperBall-404721.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 404721,
+            "file_path": "results\\Murderer3\\BumperBall.onnx",
+            "reward": 36.08730855340196,
+            "creation_time": 1670021845.019509,
+            "auxillary_file_paths": [
+                "results\\Murderer3\\BumperBall\\BumperBall-404721.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

@@ -70,7 +70,7 @@ public class Game : MonoBehaviour
             }
         }
 
-        gameOverDelegate();
+        gameOverDelegate?.Invoke();
     }
 
     int GetWinnerIndex() {
@@ -100,7 +100,7 @@ public class Game : MonoBehaviour
         }
 
         //Restart game if time has reached max or there is 1 or less balls remaining
-        if (Time.time - timeStarted > gameLength || NumberBallsAlive() <= 1) {
+        if (Time.time - timeStarted > gameLength || NumberBallsAlive() <= 0) {
             EndGame();
             StartNewGame();
         }

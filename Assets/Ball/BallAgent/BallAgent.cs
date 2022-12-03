@@ -20,22 +20,33 @@ public class BallAgent : Agent
     float minHitSpeedSqr;
     float maxHitSpeedSqr;
 
+    Ball lastBallCollidedWith = null;
+    float timeLastCollided = 0.0f;
+    public float timeSinceHitToCountAsKill = 0.20f;
+
     public override void Initialize() {
         minHitSpeedSqr = minHitSpeedForReward*minHitSpeedForReward;
         maxHitSpeedSqr = maxHitSpeedForReward*maxHitSpeedForReward;
+        m_ball.onDeathDelegate += OnBallDeath;
+        m_ball.onWinDelegate += OnBallWin;
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
         //Position and velocity of itself
-        sensor.AddObservation(m_ball.transform.localPosition);
-        sensor.AddObservation(m_ball.rb.velocity);
+        sensor.AddObservation(m_ball.transform.localPosition.x / m_game.GetMapRadius());
+        sensor.AddObservation(m_ball.transform.localPosition.z / m_game.GetMapRadius());
+        sensor.AddObservation(m_ball.rb.velocity.x);
+        sensor.AddObservation(m_ball.rb.velocity.z);
 
         //Position and Velocity of every other ball
         foreach (Ball ball in m_game.balls) {
             if (ball.ID != m_ball.ID) {
-                sensor.AddObservation(ball.transform.localPosition);
-                sensor.AddObservation(ball.rb.velocity);
+                sensor.AddObservation(ball.transform.localPosition.x / m_game.GetMapRadius());
+                sensor.AddObservation(ball.transform.localPosition.z / m_game.GetMapRadius());
+                sensor.AddObservation(ball.rb.velocity.x);
+                sensor.AddObservation(ball.rb.velocity.z);
+                sensor.AddOneHotObservation(ball.isDead() ? 1 : 0, 1);
             }
         }
     }
@@ -45,7 +56,19 @@ public class BallAgent : Agent
         float forwardMovement = actions.ContinuousActions[1];
 
         m_ball.SetMovementDirection(new Vector3(sideMovement, 0, forwardMovement));
-        AddReward(0.001f); //Reward for surviving
+
+        bool isCloseToEdge = (m_ball.transform.localPosition.magnitude / m_game.GetMapRadius()) >= 0.8f;
+
+        if (isCloseToEdge) {
+            AddReward(-0.001f);
+        }
+        else {
+            AddReward(0.001f); //Reward for surviving
+        }
+
+        if (m_ball.isDead()) {
+            Debug.Log("what");
+        }
     }
 
 
@@ -60,18 +83,47 @@ public class BallAgent : Agent
         Ball otherBall = other.gameObject.GetComponent<Ball>();
         if (otherBall != null) {
 
+            //Save last hit ball
+            lastBallCollidedWith = otherBall;
+            timeLastCollided = Time.time;
+            
+            /*
             //If the hit was big enough, then agent closer to center recieves reward
             float relativeVelocitySqrMag = other.relativeVelocity.sqrMagnitude;
 
             if (relativeVelocitySqrMag > minHitSpeedSqr) {
                 if (m_ball.transform.localPosition.sqrMagnitude < otherBall.transform.localPosition.sqrMagnitude) {
-                    float reward = Mathf.Lerp(0.2f, 1f, (relativeVelocitySqrMag - minHitSpeedSqr) / (maxHitSpeedSqr - minHitSpeedSqr));
-                    SetReward(reward);
+                    float reward = Mathf.Lerp(0.01f, 0.1f, (relativeVelocitySqrMag - minHitSpeedSqr) / (maxHitSpeedSqr - minHitSpeedSqr));
+                    AddReward(reward);
                     //Debug.Log("Speed: " + relativeVelocitySqrMag.ToString() + " R: " + reward.ToString());
                 }
             }
+            
+            */
+            
         }
-        
+    }
+
+    void OnBallDeath() {
+        SetReward(-1f);
+        EndEpisode();
+        this.enabled = false;
+
+        //This ball was killed so reward other ball for kill
+        /*
+        if (lastBallCollidedWith != null && !lastBallCollidedWith.isDead() && Time.time - timeLastCollided < timeSinceHitToCountAsKill) {
+            //Debug.Log(lastBallCollidedWith.ID + " killed " + m_ball.ID);
+            if (lastBallCollidedWith.TryGetComponent<BallAgent>(out BallAgent otherBallAgent)) {
+                otherBallAgent.SetReward(1f);
+            }
+        }
+        */
+    }
+
+    void OnBallWin() {
+        EndEpisode();
+        SetReward(1f);
+        enabled = false;
     }
 
 }

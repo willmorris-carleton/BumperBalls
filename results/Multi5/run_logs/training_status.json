@@ -1,0 +1,48 @@
+{
+    "BumperBall": {
+        "checkpoints": [
+            {
+                "steps": 499953,
+                "file_path": "results\\Multi5\\BumperBall\\BumperBall-499953.onnx",
+                "reward": 0.3189112852726664,
+                "creation_time": 1669955491.672116,
+                "auxillary_file_paths": [
+                    "results\\Multi5\\BumperBall\\BumperBall-499953.pt"
+                ]
+            },
+            {
+                "steps": 999953,
+                "file_path": "results\\Multi5\\BumperBall\\BumperBall-999953.onnx",
+                "reward": 0.4129779674112797,
+                "creation_time": 1669956255.8755846,
+                "auxillary_file_paths": [
+                    "results\\Multi5\\BumperBall\\BumperBall-999953.pt"
+                ]
+            },
+            {
+                "steps": 1000017,
+                "file_path": "results\\Multi5\\BumperBall\\BumperBall-1000017.onnx",
+                "reward": 0.4129779674112797,
+                "creation_time": 1669956255.9095793,
+                "auxillary_file_paths": [
+                    "results\\Multi5\\BumperBall\\BumperBall-1000017.pt"
+                ]
+            }
+        ],
+        "elo": 1951.0192561897532,
+        "final_checkpoint": {
+            "steps": 1000017,
+            "file_path": "results\\Multi5\\BumperBall.onnx",
+            "reward": 0.4129779674112797,
+            "creation_time": 1669956255.9095793,
+            "auxillary_file_paths": [
+                "results\\Multi5\\BumperBall\\BumperBall-1000017.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "BumperBall": {
+        "elo": -6322.100193643816,
+        "checkpoints": [
+            {
+                "steps": 215315,
+                "file_path": "results\\MultiBallMurderer\\BumperBall\\BumperBall-215315.onnx",
+                "reward": null,
+                "creation_time": 1669945625.433611,
+                "auxillary_file_paths": [
+                    "results\\MultiBallMurderer\\BumperBall\\BumperBall-215315.pt"
+                ]
+            },
+            {
+                "steps": 229853,
+                "file_path": "results\\MultiBallMurderer\\BumperBall\\BumperBall-229853.onnx",
+                "reward": 41.028820729988105,
+                "creation_time": 1669945702.8320708,
+                "auxillary_file_paths": [
+                    "results\\MultiBallMurderer\\BumperBall\\BumperBall-229853.pt"
+                ]
+            },
+            {
+                "steps": 499995,
+                "file_path": "results\\MultiBallMurderer\\BumperBall\\BumperBall-499995.onnx",
+                "reward": 382.6269642209884,
+                "creation_time": 1669946433.4671,
+                "auxillary_file_paths": [
+                    "results\\MultiBallMurderer\\BumperBall\\BumperBall-499995.pt"
+                ]
+            },
+            {
+                "steps": 500012,
+                "file_path": "results\\MultiBallMurderer\\BumperBall\\BumperBall-500012.onnx",
+                "reward": 380.6699761149211,
+                "creation_time": 1669946433.4990985,
+                "auxillary_file_paths": [
+                    "results\\MultiBallMurderer\\BumperBall\\BumperBall-500012.pt"
+                ]
+            },
+            {
+                "steps": 500012,
+                "file_path": "results\\MultiBallMurderer\\BumperBall\\BumperBall-500012.onnx",
+                "reward": null,
+                "creation_time": 1669946519.566616,
+                "auxillary_file_paths": [
+                    "results\\MultiBallMurderer\\BumperBall\\BumperBall-500012.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500012,
+            "file_path": "results\\MultiBallMurderer\\BumperBall.onnx",
+            "reward": null,
+            "creation_time": 1669946519.566616,
+            "auxillary_file_paths": [
+                "results\\MultiBallMurderer\\BumperBall\\BumperBall-500012.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

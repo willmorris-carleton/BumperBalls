@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_game: {fileID: 921468223}
-  speedMultiplier: 20
+  speedMultiplier: 1
   text: {fileID: 1136660344}
 --- !u!4 &580303145
 Transform:
@@ -921,6 +921,10 @@ PrefabInstance:
       propertyPath: m_Model
       value: 
       objectReference: {fileID: 5022602860645237092, guid: 3e86ce9653e3ca340942383d04dbe2ae, type: 3}
+    - target: {fileID: 7572222819420660909, guid: becf77b20b9d21349bb6cee0cd079253, type: 3}
+      propertyPath: m_BehaviorType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: becf77b20b9d21349bb6cee0cd079253, type: 3}
 --- !u!114 &1605015287 stripped
@@ -997,6 +1001,10 @@ PrefabInstance:
       propertyPath: m_Model
       value: 
       objectReference: {fileID: 5022602860645237092, guid: 3e86ce9653e3ca340942383d04dbe2ae, type: 3}
+    - target: {fileID: 7572222819420660909, guid: becf77b20b9d21349bb6cee0cd079253, type: 3}
+      propertyPath: m_BehaviorType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: becf77b20b9d21349bb6cee0cd079253, type: 3}
 --- !u!114 &1976879445 stripped

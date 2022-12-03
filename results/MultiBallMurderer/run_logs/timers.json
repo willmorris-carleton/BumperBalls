@@ -1,0 +1,54 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1669946513",
+        "python_version": "3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\willi\\Documents\\UnityProjects\\BumperBalls\\venv\\Scripts\\mlagents-learn config/BumperBall_config.yaml --resume --run-id MultiBallMurderer --torch-device cpu",
+        "mlagents_version": "0.29.0",
+        "mlagents_envs_version": "0.29.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.1+cu110",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1669946519"
+    },
+    "total": 5.9441263,
+    "count": 1,
+    "self": 0.006123699999998955,
+    "children": {
+        "run_training.setup": {
+            "total": 0.12847759999999997,
+            "count": 1,
+            "self": 0.12847759999999997
+        },
+        "TrainerController.start_learning": {
+            "total": 5.809525000000001,
+            "count": 1,
+            "self": 8.810000000103457e-05,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 5.7563409,
+                    "count": 1,
+                    "self": 5.7563409
+                },
+                "trainer_threads": {
+                    "total": 7.000000001866624e-07,
+                    "count": 1,
+                    "self": 7.000000001866624e-07
+                },
+                "TrainerController._save_models": {
+                    "total": 0.053095299999999845,
+                    "count": 1,
+                    "self": 0.006414799999999943,
+                    "children": {
+                        "RLTrainer._checkpoint": {
+                            "total": 0.0466804999999999,
+                            "count": 1,
+                            "self": 0.0466804999999999
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
