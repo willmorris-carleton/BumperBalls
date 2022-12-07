@@ -1,0 +1,66 @@
+{
+    "BumperBall": {
+        "checkpoints": [
+            {
+                "steps": 6499978,
+                "file_path": "results\\JustWinAgent\\BumperBall\\BumperBall-6499978.onnx",
+                "reward": 3.00586692293485,
+                "creation_time": 1670032932.5012405,
+                "auxillary_file_paths": [
+                    "results\\JustWinAgent\\BumperBall\\BumperBall-6499978.pt"
+                ]
+            },
+            {
+                "steps": 6999986,
+                "file_path": "results\\JustWinAgent\\BumperBall\\BumperBall-6999986.onnx",
+                "reward": 2.0516668309768042,
+                "creation_time": 1670033772.1436806,
+                "auxillary_file_paths": [
+                    "results\\JustWinAgent\\BumperBall\\BumperBall-6999986.pt"
+                ]
+            },
+            {
+                "steps": 7499944,
+                "file_path": "results\\JustWinAgent\\BumperBall\\BumperBall-7499944.onnx",
+                "reward": 3.000625256448984,
+                "creation_time": 1670034609.5920494,
+                "auxillary_file_paths": [
+                    "results\\JustWinAgent\\BumperBall\\BumperBall-7499944.pt"
+                ]
+            },
+            {
+                "steps": 7999956,
+                "file_path": "results\\JustWinAgent\\BumperBall\\BumperBall-7999956.onnx",
+                "reward": 2.559555775123752,
+                "creation_time": 1670035450.4744444,
+                "auxillary_file_paths": [
+                    "results\\JustWinAgent\\BumperBall\\BumperBall-7999956.pt"
+                ]
+            },
+            {
+                "steps": 8311744,
+                "file_path": "results\\JustWinAgent\\BumperBall\\BumperBall-8311744.onnx",
+                "reward": 3.0080002546310425,
+                "creation_time": 1670035995.7101665,
+                "auxillary_file_paths": [
+                    "results\\JustWinAgent\\BumperBall\\BumperBall-8311744.pt"
+                ]
+            }
+        ],
+        "elo": 572.8254704869728,
+        "final_checkpoint": {
+            "steps": 8311744,
+            "file_path": "results\\JustWinAgent\\BumperBall.onnx",
+            "reward": 3.0080002546310425,
+            "creation_time": 1670035995.7101665,
+            "auxillary_file_paths": [
+                "results\\JustWinAgent\\BumperBall\\BumperBall-8311744.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

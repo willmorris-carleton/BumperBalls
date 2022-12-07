@@ -38,7 +38,7 @@ public class Game : MonoBehaviour
         mapRenderer = mapObject.GetComponent<Renderer>();
     }
 
-    private void StartNewGame() {
+    public void StartNewGame() {
         numGames++;
         timeStarted = Time.time;
 
@@ -47,7 +47,7 @@ public class Game : MonoBehaviour
         }
     }
 
-    private void EndGame() {
+    public void EndGame() {
         
         //If there is a winner...
         if (NumberBallsAlive() == 1) {

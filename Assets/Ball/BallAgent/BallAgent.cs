@@ -65,10 +65,6 @@ public class BallAgent : Agent
         else {
             AddReward(0.001f); //Reward for surviving
         }
-
-        if (m_ball.isDead()) {
-            Debug.Log("what");
-        }
     }
 
 
@@ -87,25 +83,21 @@ public class BallAgent : Agent
             lastBallCollidedWith = otherBall;
             timeLastCollided = Time.time;
             
-            /*
             //If the hit was big enough, then agent closer to center recieves reward
             float relativeVelocitySqrMag = other.relativeVelocity.sqrMagnitude;
 
             if (relativeVelocitySqrMag > minHitSpeedSqr) {
                 if (m_ball.transform.localPosition.sqrMagnitude < otherBall.transform.localPosition.sqrMagnitude) {
-                    float reward = Mathf.Lerp(0.01f, 0.1f, (relativeVelocitySqrMag - minHitSpeedSqr) / (maxHitSpeedSqr - minHitSpeedSqr));
-                    AddReward(reward);
+                    //float reward = Mathf.Lerp(0.01f, 0.1f, (relativeVelocitySqrMag - minHitSpeedSqr) / (maxHitSpeedSqr - minHitSpeedSqr));
+                    AddReward(0.01f);
                     //Debug.Log("Speed: " + relativeVelocitySqrMag.ToString() + " R: " + reward.ToString());
                 }
             }
-            
-            */
-            
         }
     }
 
     void OnBallDeath() {
-        SetReward(-1f);
+        AddReward(-1f);
         EndEpisode();
         this.enabled = false;
 
@@ -121,9 +113,9 @@ public class BallAgent : Agent
     }
 
     void OnBallWin() {
+        AddReward(1f);
         EndEpisode();
-        SetReward(1f);
-        enabled = false;
+        this.enabled = false;
     }
 
 }
