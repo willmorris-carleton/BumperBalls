@@ -1,0 +1,65 @@
+{
+    "BumperBall": {
+        "checkpoints": [
+            {
+                "steps": 6999979,
+                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-6999979.onnx",
+                "reward": 1.317916769728375,
+                "creation_time": 1670450547.6659465,
+                "auxillary_file_paths": [
+                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-6999979.pt"
+                ]
+            },
+            {
+                "steps": 7499941,
+                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-7499941.onnx",
+                "reward": 1.4520770572842314,
+                "creation_time": 1670451122.1353152,
+                "auxillary_file_paths": [
+                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-7499941.pt"
+                ]
+            },
+            {
+                "steps": 7999991,
+                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-7999991.onnx",
+                "reward": 1.5345350114173841,
+                "creation_time": 1670451693.0674107,
+                "auxillary_file_paths": [
+                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-7999991.pt"
+                ]
+            },
+            {
+                "steps": 8499991,
+                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-8499991.onnx",
+                "reward": 1.1909001095686107,
+                "creation_time": 1670452267.4820223,
+                "auxillary_file_paths": [
+                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-8499991.pt"
+                ]
+            },
+            {
+                "steps": 8503950,
+                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-8503950.onnx",
+                "reward": 1.2104572461385812,
+                "creation_time": 1670452271.0890222,
+                "auxillary_file_paths": [
+                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-8503950.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 8503950,
+            "file_path": "results\\LastTryAgainstSimple\\BumperBall.onnx",
+            "reward": 1.2104572461385812,
+            "creation_time": 1670452271.0890222,
+            "auxillary_file_paths": [
+                "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-8503950.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

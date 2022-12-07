@@ -746,6 +746,10 @@ PrefabInstance:
       propertyPath: TeamId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7572222819420660909, guid: becf77b20b9d21349bb6cee0cd079253, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: becf77b20b9d21349bb6cee0cd079253, type: 3}
 --- !u!114 &339488841 stripped
@@ -769,6 +773,10 @@ PrefabInstance:
     - target: {fileID: 5656636990713609836, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
       propertyPath: m_Name
       value: GameArena (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656636990713609836, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5656636990713609838, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
       propertyPath: gameLength
@@ -1166,6 +1174,10 @@ PrefabInstance:
     - target: {fileID: 5656636990713609836, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
       propertyPath: m_Name
       value: GameArena (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656636990713609836, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5656636990713609838, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
       propertyPath: gameLength
@@ -1743,6 +1755,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7572222819420660909, guid: becf77b20b9d21349bb6cee0cd079253, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: becf77b20b9d21349bb6cee0cd079253, type: 3}
 --- !u!114 &903221665 stripped
@@ -2039,6 +2055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameArena (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5656636990713609836, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5656636990713609838, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
       propertyPath: gameLength
       value: 30
@@ -2284,6 +2304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameArena (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5656636990713609836, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5656636990713609838, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
       propertyPath: gameLength
       value: 30
@@ -2380,6 +2404,10 @@ PrefabInstance:
     - target: {fileID: 5656636990713609836, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
       propertyPath: m_Name
       value: GameArena (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656636990713609836, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5656636990713609838, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
       propertyPath: gameLength
@@ -2626,6 +2654,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameArena (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5656636990713609836, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5656636990713609838, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
       propertyPath: gameLength
       value: 30
@@ -2775,6 +2807,10 @@ PrefabInstance:
       propertyPath: TeamId
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7572222819420660909, guid: becf77b20b9d21349bb6cee0cd079253, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: becf77b20b9d21349bb6cee0cd079253, type: 3}
 --- !u!114 &1572383200 stripped
@@ -2850,6 +2886,10 @@ PrefabInstance:
     - target: {fileID: 7572222819420660909, guid: becf77b20b9d21349bb6cee0cd079253, type: 3}
       propertyPath: TeamId
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7572222819420660909, guid: becf77b20b9d21349bb6cee0cd079253, type: 3}
+      propertyPath: m_Model
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: becf77b20b9d21349bb6cee0cd079253, type: 3}
@@ -3174,6 +3214,10 @@ PrefabInstance:
     - target: {fileID: 5656636990713609836, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
       propertyPath: m_Name
       value: GameArena (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656636990713609836, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5656636990713609838, guid: 91514e161f8430a4fb577fd3944741bf, type: 3}
       propertyPath: gameLength

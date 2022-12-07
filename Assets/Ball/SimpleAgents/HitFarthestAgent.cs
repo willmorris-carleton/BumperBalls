@@ -6,6 +6,11 @@ public class HitFarthestAgent : SimpleReflexAgent
 {
     protected override void PerformAction(Ball ball, List<Vector3> otherBallPositions, List<Vector3> otherBallVelocities)
     {
+        if (otherBallPositions.Count == 0) {
+            ball.SetMovementDirection(-ball.transform.localPosition.normalized);
+            return;
+        }
+        
         //Find the nearest ball position
         Vector3 ballPosition = ball.transform.localPosition;
         Vector3 farthestPos = otherBallPositions[0];

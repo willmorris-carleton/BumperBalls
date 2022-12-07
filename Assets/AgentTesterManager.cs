@@ -29,9 +29,18 @@ public class AgentTesterManager : MonoBehaviour
         string s = "";
         s += "Games played: " + m_game.numGames + "\n";
         for (int i = 0; i < m_game.balls.Count; i++) {
-            s += m_game.balls[i].ID + " Wins: " + m_game.balls[i].gamesWon + ", Deaths: " + m_game.balls[i].gamesDied + "\n";
+            s += getAgentName(m_game.balls[i]) + " Wins: " + m_game.balls[i].gamesWon + ", Deaths: " + m_game.balls[i].gamesDied + "\n";
         }
         text.text = s;
+    }
+
+    string getAgentName(Ball ball) {
+        if (isMLAgent(ball)) return "MLAgent " + ball.ID;
+        return "SimpleAgent " + ball.ID;
+    }
+
+    bool isMLAgent(Ball ball) {
+        return ball.TryGetComponent<BallAgent>(out BallAgent ballAgent);
     }
 
 }

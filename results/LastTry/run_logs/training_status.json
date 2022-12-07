@@ -1,0 +1,65 @@
+{
+    "BumperBall": {
+        "checkpoints": [
+            {
+                "steps": 5999986,
+                "file_path": "results\\LastTry\\BumperBall\\BumperBall-5999986.onnx",
+                "reward": null,
+                "creation_time": 1670438765.0942888,
+                "auxillary_file_paths": [
+                    "results\\LastTry\\BumperBall\\BumperBall-5999986.pt"
+                ]
+            },
+            {
+                "steps": 6499969,
+                "file_path": "results\\LastTry\\BumperBall\\BumperBall-6499969.onnx",
+                "reward": 1.4566112597369485,
+                "creation_time": 1670439005.9701538,
+                "auxillary_file_paths": [
+                    "results\\LastTry\\BumperBall\\BumperBall-6499969.pt"
+                ]
+            },
+            {
+                "steps": 6535365,
+                "file_path": "results\\LastTry\\BumperBall\\BumperBall-6535365.onnx",
+                "reward": null,
+                "creation_time": 1670439085.6172993,
+                "auxillary_file_paths": [
+                    "results\\LastTry\\BumperBall\\BumperBall-6535365.pt"
+                ]
+            },
+            {
+                "steps": 6569170,
+                "file_path": "results\\LastTry\\BumperBall\\BumperBall-6569170.onnx",
+                "reward": 1.387333468618718,
+                "creation_time": 1670439798.2592735,
+                "auxillary_file_paths": [
+                    "results\\LastTry\\BumperBall\\BumperBall-6569170.pt"
+                ]
+            },
+            {
+                "steps": 6589228,
+                "file_path": "results\\LastTry\\BumperBall\\BumperBall-6589228.onnx",
+                "reward": 1.5081177692148178,
+                "creation_time": 1670439868.689301,
+                "auxillary_file_paths": [
+                    "results\\LastTry\\BumperBall\\BumperBall-6589228.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 6589228,
+            "file_path": "results\\LastTry\\BumperBall.onnx",
+            "reward": 1.5081177692148178,
+            "creation_time": 1670439868.689301,
+            "auxillary_file_paths": [
+                "results\\LastTry\\BumperBall\\BumperBall-6589228.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
