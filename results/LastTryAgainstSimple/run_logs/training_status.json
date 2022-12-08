@@ -2,58 +2,58 @@
     "BumperBall": {
         "checkpoints": [
             {
-                "steps": 6999979,
-                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-6999979.onnx",
-                "reward": 1.317916769728375,
-                "creation_time": 1670450547.6659465,
+                "steps": 11999937,
+                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-11999937.onnx",
+                "reward": 1.5618126444751397,
+                "creation_time": 1670458309.8937256,
                 "auxillary_file_paths": [
-                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-6999979.pt"
+                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-11999937.pt"
                 ]
             },
             {
-                "steps": 7499941,
-                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-7499941.onnx",
-                "reward": 1.4520770572842314,
-                "creation_time": 1670451122.1353152,
+                "steps": 12499940,
+                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-12499940.onnx",
+                "reward": 1.5006487740052712,
+                "creation_time": 1670458786.3649547,
                 "auxillary_file_paths": [
-                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-7499941.pt"
+                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-12499940.pt"
                 ]
             },
             {
-                "steps": 7999991,
-                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-7999991.onnx",
-                "reward": 1.5345350114173841,
-                "creation_time": 1670451693.0674107,
+                "steps": 12999989,
+                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-12999989.onnx",
+                "reward": 1.5681429760796683,
+                "creation_time": 1670459261.4670532,
                 "auxillary_file_paths": [
-                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-7999991.pt"
+                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-12999989.pt"
                 ]
             },
             {
-                "steps": 8499991,
-                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-8499991.onnx",
-                "reward": 1.1909001095686107,
-                "creation_time": 1670452267.4820223,
+                "steps": 13499982,
+                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-13499982.onnx",
+                "reward": 1.3437408610350556,
+                "creation_time": 1670459731.134672,
                 "auxillary_file_paths": [
-                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-8499991.pt"
+                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-13499982.pt"
                 ]
             },
             {
-                "steps": 8503950,
-                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-8503950.onnx",
-                "reward": 1.2104572461385812,
-                "creation_time": 1670452271.0890222,
+                "steps": 13838365,
+                "file_path": "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-13838365.onnx",
+                "reward": null,
+                "creation_time": 1670460043.5519903,
                 "auxillary_file_paths": [
-                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-8503950.pt"
+                    "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-13838365.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 8503950,
+            "steps": 13838365,
             "file_path": "results\\LastTryAgainstSimple\\BumperBall.onnx",
-            "reward": 1.2104572461385812,
-            "creation_time": 1670452271.0890222,
+            "reward": null,
+            "creation_time": 1670460043.5519903,
             "auxillary_file_paths": [
-                "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-8503950.pt"
+                "results\\LastTryAgainstSimple\\BumperBall\\BumperBall-13838365.pt"
             ]
         }
     },

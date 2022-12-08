@@ -33,7 +33,7 @@ behaviors:
           memory: null
           goal_conditioning_type: hyper
           deterministic: false
-    init_path: results\LastTry\BumperBall\checkpoint.pt
+    init_path: null
     keep_checkpoints: 5
     checkpoint_interval: 500000
     max_steps: 80000000
@@ -63,9 +63,9 @@ engine_settings:
 environment_parameters: null
 checkpoint_settings:
   run_id: LastTryAgainstSimple
-  initialize_from: LastTry
+  initialize_from: null
   load_model: false
-  resume: false
+  resume: true
   force: false
   train_model: false
   inference: false
